@@ -1,4 +1,5 @@
 import { Calendar, Clock, MapPin, Users, ArrowRight, Star, Ticket } from 'lucide-react';
+import Image from 'next/image';
 
 export default function EventPage() {
   return (
@@ -39,10 +40,12 @@ export default function EventPage() {
         <div className="bg-gradient-to-br from-gray-900/95 to-gray-900/70 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 transform hover:scale-[1.01] hover:shadow-purple-500/10">
           {/* Event Image Section */}
           <div className="relative h-96">
-            <img 
+            <Image
               src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80"
               alt="Tech Conference"
-              className="w-full h-full object-cover object-center"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent" />
             

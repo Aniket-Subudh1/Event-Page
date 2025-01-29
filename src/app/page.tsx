@@ -1,5 +1,3 @@
-import { Footers } from "@/sections/Footer";
-
 export default function Home() {
   return (
     <>
