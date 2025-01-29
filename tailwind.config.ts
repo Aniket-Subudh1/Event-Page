@@ -14,7 +14,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{ts,tsx}",
   ],
-  darkMode: "class",
+  darkMode: ["class", "class"],
   theme: {
   	screens: {
   		sm: '375px',
@@ -23,7 +23,7 @@ const config: Config = {
   	},
   	extend: {
   		container: {
-			center: true,
+  			center: true,
   			padding: {
   				DEFAULT: '20px',
   				lg: '80px'
