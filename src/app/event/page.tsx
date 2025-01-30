@@ -85,7 +85,6 @@ const Card = () => {
 
 
 const EventPage = () => {
-  const router = useRouter();
 
   return (
     <main className="relative min-h-screen overflow-auto bg-gradient-to-b from-black via-purple-950/20 to-black">
