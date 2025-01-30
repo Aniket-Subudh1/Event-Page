@@ -42,11 +42,16 @@ const ParticleBackground = () => {
 
 const Card = () => {
   return (
-    <div className='md:h-[150px] lg:h-[150px] sm:h-[100px] border border-black  border-zinc-800 bg-opacity-10 backdrop-blur-sm bg-black'>
+    <div className='md:h-[150px] lg:h-[150px] sm:h-[100px] border  bg-opacity-10 backdrop-blur-[1px] bg-black'>
     <Spotlight
       className='from-purple-500 via-purple-800 to-purple-500 blur-xl dark:from-blue-900 dark:via-blue-500 dark:to-blue-900'
       size={64}
     />
+    <div className='p-4'>
+      <h1 className='md:text-5xl lg:text-5xl sm:text-2xl  md:py-4 font-bold text-center text-purple-400 z-999'> &#123; Events and Workshops &#125;</h1>
+      <h5 className="text-center sm:text-sm lg:text-lg md:text-lg">Below are the past events, upcoming events and workshops conducted by the community.</h5>
+   </div>
+
     <div className='absolute inset-0'>
       <svg className='h-full w-full'>
         <defs>

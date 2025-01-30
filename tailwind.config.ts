@@ -31,7 +31,7 @@ const config: Config = {
   		},
   		animation: {
   			gradientMove: 'gradientMove 6s ease infinite',
-  			glow: 'glow 1.5s ease-in-out infinite alternate'
+  			glow: 'glow 1.5s ease-in-out infinite alternate',
   		},
   		keyframes: {
   			gradientMove: {
@@ -53,7 +53,8 @@ const config: Config = {
   					boxShadow: '0 0 20px rgba(140, 69, 255, 0.9), 0 0 20px rgba(140, 69, 255, 1)',
   					glow: '0 0 10px rgba(128, 0, 128, 0.8), 0 0 20px rgba(128, 0, 128, 10)'
   				}
-  			}
+  			},
+			
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
