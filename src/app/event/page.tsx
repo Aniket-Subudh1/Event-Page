@@ -2,7 +2,6 @@
 
 import { 
   Calendar, 
-  Clock, 
   MapPin, 
   Users, 
   ArrowRight, 
