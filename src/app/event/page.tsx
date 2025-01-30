@@ -42,7 +42,7 @@ const ParticleBackground = () => {
 
 const Card = () => {
   return (
-    <div className='md:h-[200px] lg:h-[200px] sm:h-[100px] border border-black  border-zinc-800 bg-opacity-10 backdrop-blur-sm bg-black'>
+    <div className='md:h-[150px] lg:h-[150px] sm:h-[100px] border border-black  border-zinc-800 bg-opacity-10 backdrop-blur-sm bg-black'>
     <Spotlight
       className='from-purple-500 via-purple-800 to-purple-500 blur-xl dark:from-blue-900 dark:via-blue-500 dark:to-blue-900'
       size={64}
@@ -90,8 +90,8 @@ const EventPage = () => {
       <WormholeCanvas intensity={0.3} />
       <ParticleBackground />
       
-      <div className="relative z-10 flex min-h-screen ">
-        <div className="relative w-full top-[70px] ">
+      <div className="relative z-10 flex min-h-screen overflow-hidden">
+        <div className="relative w-full top-[90px] ">
           <Card />
         </div>
       </div>
