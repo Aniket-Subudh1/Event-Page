@@ -1,13 +1,10 @@
 'use client';
-
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 export default function WormholeCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  interface WormholeCanvasProps {
-    intensity: number;
-  }
+ 
   useEffect(() => {
     if (!canvasRef.current) return;
 
