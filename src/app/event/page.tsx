@@ -1,3 +1,4 @@
+"use client";
 import { Calendar, Clock, MapPin, Users, ArrowRight, Star, Ticket } from 'lucide-react';
 import Image from 'next/image';
 
