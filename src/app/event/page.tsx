@@ -1,7 +1,6 @@
 'use client';
 
 import { Spotlight } from "@/components/ui/spotlight";
-import { useRouter } from 'next/navigation';
 import WormholeCanvas from '@/components/WormHoleCanvas';
 import { useEffect, useState } from 'react';
 
