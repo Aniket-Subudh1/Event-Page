@@ -36,7 +36,7 @@ export default function TimelineDemo() {
       }, 1200);
       return () => clearTimeout(timer);
     } else {
-      setTimeout(() => setShowTimeline(true), 500); // Show timeline after animation
+      setTimeout(() => setShowTimeline(true), 500); 
     }
   }, [terminalIndex]);
 
@@ -94,41 +94,7 @@ export default function TimelineDemo() {
       images: ["/images/timeline/hackathon-1.jpg"]
     }
   ];
-  const ParticleBackground = () => {
-    const [particles, setParticles] = useState<Array<{
-      top: string;
-      left: string;
-      delay: string;
-      opacity: number;
-    }>>([]);
   
-    useEffect(() => {
-      const newParticles = [...Array(20)].map(() => ({
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        delay: `${Math.random() * 2}s`,
-        opacity: Math.random() * 0.5
-      }));
-      setParticles(newParticles);
-    }, []);
-  
-    return (
-      <div className="absolute inset-0 overflow-hidden">
-        {particles.map((particle, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-purple-500 rounded-full animate-pulse"
-            style={{
-              top: particle.top,
-              left: particle.left,
-              animationDelay: particle.delay,
-              opacity: particle.opacity
-            }}
-          />
-        ))}
-      </div>
-    );
-  };
   
   return (
     
