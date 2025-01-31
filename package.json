@@ -11,6 +11,8 @@
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.1",
+    "@react-three/drei": "^10.0.0-rc.1",
+    "@react-three/fiber": "^9.0.0-alpha.8",
     "@tabler/icons-react": "^3.29.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/postcss": "^4.0.0",
