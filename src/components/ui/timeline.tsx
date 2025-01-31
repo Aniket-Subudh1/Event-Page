@@ -34,7 +34,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="w-full bg-gradient-to-b from-purple-900 via-black to-black font-sans md:px-10 relative overflow-hidden"
+      className="w-full  font-sans md:px-10 relative overflow-hidden"
       ref={containerRef}
     >
       {/* Cyberpunk Grid Background */}
@@ -43,27 +43,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       </div>
 
       <div className="max-w-9xl mx-auto py-20 px-4 md:px-8 lg:px-10 relative z-10">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-lg md:text-4xl mb-4 text-transparent bg-clip-text bg-[linear-gradient(45deg,#8b5cf6,#ec4899)] font-bold max-w-4xl cyber-font"
-        >
-          DEV_SOMEWARE::TECH_ODYSSEY_2024
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-purple-300/80 text-sm md:text-base max-w-sm font-mono neon-text"
-        >
-          {`> INITIALIZING COSMIC JOURNEY...`}
-          <br />
-          {`[ REGISTRATION → QUANTUM_QUIZ → GALACTIC_DISCUSSIONS → STELLAR_HACK ]`}
-        </motion.p>
+        
+        
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20 z-10">
+      <div ref={ref} className="relative max-w-7xl -mt-[180px] mx-auto pb-20 z-10">
         {data.map((item, index) => (
           <motion.div
             key={index}

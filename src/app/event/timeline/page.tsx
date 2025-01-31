@@ -1,9 +1,19 @@
 'use client';
+
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { motion } from "framer-motion";
 import { Rocket, Ticket, MessageCircle, Code, Zap } from "lucide-react";
+
+
+const terminalLines = [
+  "> npm init ZenoTronE",
+  "> npm install AmazingTechEvent --save",
+  "> npm run dev",
+  "> INITIALIZING COSMIC JOURNEY...",
+  "[ REGISTRATION → QUANTUM_QUIZ → GALACTIC_DISCUSSIONS → STELLAR_HACK ]",
+];
 
 type TimelineEvent = {
   title: string;
@@ -16,6 +26,20 @@ type TimelineEvent = {
 };
 
 export default function TimelineDemo() {
+  const [showTimeline, setShowTimeline] = useState(false);
+  const [terminalIndex, setTerminalIndex] = useState(0);
+
+  useEffect(() => {
+    if (terminalIndex < terminalLines.length) {
+      const timer = setTimeout(() => {
+        setTerminalIndex((prev) => prev + 1);
+      }, 1200);
+      return () => clearTimeout(timer);
+    } else {
+      setTimeout(() => setShowTimeline(true), 500); // Show timeline after animation
+    }
+  }, [terminalIndex]);
+
   const events: TimelineEvent[] = [
     {
       title: "Cosmic Registration",
@@ -28,10 +52,7 @@ export default function TimelineDemo() {
         "Team Registration Benefits",
         "Exclusive Swag Kit Access"
       ],
-      images: [
-        "/images/timeline/registration-1.jpg",
-        "/images/timeline/registration-2.jpg"
-      ]
+      images: ["/images/timeline/registration-1.jpg"]
     },
     {
       title: "Galactic Tech Quiz",
@@ -44,10 +65,7 @@ export default function TimelineDemo() {
         "Live Leaderboard Tracking",
         "Practice Arena Access"
       ],
-      images: [
-        "/images/timeline/quiz-1.jpg",
-        "/images/timeline/quiz-2.jpg"
-      ]
+      images: ["/images/timeline/quiz-1.jpg"]
     },
     {
       title: "Orbital Discussions",
@@ -60,10 +78,7 @@ export default function TimelineDemo() {
         "Networking Lounges",
         "Interactive Workshops"
       ],
-      images: [
-        "/images/timeline/discussion-1.jpg",
-        "/images/timeline/discussion-2.jpg"
-      ]
+      images: ["/images/timeline/discussion-1.jpg"]
     },
     {
       title: "Nova Hackathon",
@@ -76,93 +91,156 @@ export default function TimelineDemo() {
         "Mentor Support System",
         "Post-Event Incubation"
       ],
-      images: [
-        "/images/timeline/hackathon-1.jpg",
-        "/images/timeline/hackathon-2.jpg"
-      ]
+      images: ["/images/timeline/hackathon-1.jpg"]
     }
   ];
-
+  const ParticleBackground = () => {
+    const [particles, setParticles] = useState<Array<{
+      top: string;
+      left: string;
+      delay: string;
+      opacity: number;
+    }>>([]);
+  
+    useEffect(() => {
+      const newParticles = [...Array(20)].map(() => ({
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+        delay: `${Math.random() * 2}s`,
+        opacity: Math.random() * 0.5
+      }));
+      setParticles(newParticles);
+    }, []);
+  
+    return (
+      <div className="absolute inset-0 overflow-hidden">
+        {particles.map((particle, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-purple-500 rounded-full animate-pulse"
+            style={{
+              top: particle.top,
+              left: particle.left,
+              animationDelay: particle.delay,
+              opacity: particle.opacity
+            }}
+          />
+        ))}
+      </div>
+    );
+  };
+  
   return (
-    <div className="w-full bg-gradient-to-b from-purple-900 via-purple-950 to-black">
-      <Timeline data={events.map(event => ({
-        title: event.title,
-        content: (
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="relative group"
-          >
-            {/* Header Section */}
-            <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 rounded-lg bg-purple-500/10 backdrop-blur-sm">
-                {event.icon}
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-purple-100">
-                  {event.title}
-                </h3>
-                <p className="text-sm text-purple-300/80">{event.phase}</p>
-                <div className="flex items-center gap-2 mt-1">
-                  <Zap className="w-4 h-4 text-purple-400" />
-                  <span className="text-xs font-medium text-purple-400">
-                    {event.date}
-                  </span>
-                </div>
-              </div>
-            </div>
+    
+    <div className="w-full bg-purple -mt-16  min-h-screen  flex flex-col ">
+      
+      {/* Terminal Effect */}
+      <motion.h2
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+  className="text-lg md:text-4xl mb-4 mt-28 text-transparent  mt-28 bg-clip-text bg-[linear-gradient(45deg,#8b5cf6,#ec4899)] font-bold max-w-4xl cyber-font 
+              text-center mx-auto px-4"
+>
+  DEV_SOMEWARE::ZENOTRONE_2025
+</motion.h2>
 
-            {/* Progress Indicator */}
-            <div className="relative h-1 mb-6 bg-purple-900/50 rounded-full overflow-hidden">
-              <motion.div
-                className="absolute h-full bg-gradient-to-r from-purple-500 to-purple-600 rounded-full"
-                initial={{ width: 0 }}
-                whileInView={{ width: "30%" }}
-                transition={{ duration: 1 }}
-              />
-            </div>
+<motion.div
+  className="mb-8 text-left px-6 py-3 rounded-lg text-purple-300 font-mono 
+             bg-black/50 border border-purple-500 shadow-lg w-full max-w-xl 
+             mx-auto px-4"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+>
+  {terminalLines.slice(0, terminalIndex + 1).map((line, index) => (
+    <motion.p
+      key={index}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: index * 0.5 }}
+      className="text-sm md:text-base"
+    >
+      {line}
+    </motion.p>
+  ))}
+</motion.div>
 
-            {/* Content Grid */}
-            <div className="space-y-6">
-              <p className="text-purple-200/80 text-sm leading-relaxed">
-                {event.highlights[0]}
-              </p>
+      {/* Glowing Beam Animation before Timeline Reveal */}
+      {showTimeline && (
+        <motion.div
+          className="w-full   h-1 bg-purple-500/40 rounded-full overflow-hidden relative mb-0"
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 1 }}
+        >
+          <motion.div
+            className="absolute top-0 left-0 h-full w-20 bg-purple-500 blur-md rounded-full"
+            animate={{ x: ["0%", "100%"] }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
+          />
+        </motion.div>
+      )}
 
-              <div className="grid grid-cols-2 gap-4">
-                {event.images.map((img, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ scale: 1.02 }}
-                    className="relative h-32 md:h-44 rounded-xl overflow-hidden shadow-[0_0_24px_rgba(147,_51,_234,_0.15)]"
-                  >
-                    <Image
-                      src={img}
-                      alt=""
-                      fill
-                      className="object-cover"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="space-y-3">
-                {event.highlights.slice(1).map((highlight, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-3 text-purple-300/80 text-sm"
-                  >
-                    <div className="w-2 h-2 bg-purple-400 rounded-full flex-shrink-0" />
-                    <span>{highlight}</span>
+      {/* Timeline Cards */}
+      {showTimeline && (
+        <Timeline
+          data={events.map(event => ({
+            title: event.title,
+            content: (
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="relative group"
+              >
+                {/* Header Section */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 rounded-lg bg-purple-500/10 backdrop-blur-sm">
+                    {event.icon}
                   </div>
-                ))}
-              </div>
-            </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-purple-100">
+                      {event.title}
+                    </h3>
+                    <p className="text-sm text-purple-300/80">{event.phase}</p>
+                    <div className="flex items-center gap-2 mt-1">
+                      <Zap className="w-4 h-4 text-purple-400" />
+                      <span className="text-xs font-medium text-purple-400">
+                        {event.date}
+                      </span>
+                    </div>
+                  </div>
+                </div>
 
-            {/* Glow Effect */}
-            <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent opacity-20 group-hover:opacity-30 transition-opacity" />
-          </motion.div>
-        )
-      }))} />
+                {/* Content Grid */}
+                <div className="space-y-6">
+                  <p className="text-purple-200/80 text-sm leading-relaxed">
+                    {event.highlights[0]}
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    {event.images.map((img, index) => (
+                      <motion.div
+                        key={index}
+                        whileHover={{ scale: 1.02 }}
+                        className="relative h-32 md:h-44 rounded-xl overflow-hidden shadow-[0_0_24px_rgba(147,_51,_234,_0.15)]"
+                      >
+                        <Image
+                          src={img}
+                          alt=""
+                          fill
+                          className="object-cover"
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            )
+          }))}
+        />
+      )}
     </div>
   );
 }
