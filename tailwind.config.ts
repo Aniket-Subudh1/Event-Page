@@ -34,8 +34,17 @@ const config = {
       animation: {
         gradientMove: "gradientMove 6s ease infinite",
         glow: "glow 1.5s ease-in-out infinite alternate",
+         shimmer: "shimmer 2s linear infinite"
       },
       keyframes: {
+        shimmer: {
+          from: {
+            "backgroundPosition": "0 0"
+          },
+          to: {
+            "backgroundPosition": "-200% 0"
+          }
+        },
         gradientMove: {
           "0%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
