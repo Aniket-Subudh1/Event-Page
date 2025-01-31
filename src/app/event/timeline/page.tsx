@@ -5,9 +5,7 @@ import React, { useState, useEffect } from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { motion } from "framer-motion";
 
-
 import { Ticket, Rocket, MessageCircle, Code, Zap } from "lucide-react";
-
 
 import { EventRegistrationModal } from "@/components/ui/EventRegistrationModal";
 
@@ -16,8 +14,8 @@ const terminalLines = [
   "> npm init ZeNoTronE",
   "> npm install AmazingTechEvent --save",
   "> npm run dev",
-  "> INITIALIZING COSMIC JOURNEY...",
-  "[ REGISTRATION → QUANTUM_QUIZ → GALACTIC_DISCUSSIONS → STELLAR_HACK ]",
+  "> INITIALIZING TECH JOURNEY...",
+  "[ COSMIC_REGISTRATION → OPENING_CEREMONY → TECH_TALKS → ZENOTRONE_HACKTHON ]",
 ];
 
 
@@ -61,7 +59,7 @@ export default function TimelineDemo() {
         "Team Registration Benefits",
         "Exclusive Swags for Early Registrations",
       ],
-      images: ["/images/timeline/registration-1.jpg"],
+      images: ["/cos_r.png"],
     },
     {
       title: "Opening Ceremony & Orientation",
@@ -75,7 +73,7 @@ export default function TimelineDemo() {
         "Overview of Fullstack, AI, Blockchain, Cloud, and AR-VR Groups",
         "Interactive Quiz with Exciting Prizes",
       ],
-      images: ["/images/timeline/orientation-1.jpg"],
+      images: ["/ori.png"],
     },
     {
       title: "Tech Talks",
@@ -89,7 +87,7 @@ export default function TimelineDemo() {
         "Live Q&A with Industry Experts",
         "Engagement via Interactive Polls",
       ],
-      images: ["/images/timeline/tech-talks-1.jpg"],
+      images: ["/talk.png"],
     },
     {
       title: "ZeNoTronE Hackathon",
@@ -103,7 +101,7 @@ export default function TimelineDemo() {
         "Judging Criteria: Innovation, Feasibility, Impact, and More",
         "Winning Projects Receive Prizes and Recognition",
       ],
-      images: ["/images/timeline/hackathon-1.jpg"],
+      images: ["/hack.png"],
     },
   ];
   

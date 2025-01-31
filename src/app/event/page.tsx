@@ -17,7 +17,7 @@ const ParticleBackground = () => {
     }>
   >([]);
 
- 
+
 
   useEffect(() => {
     const newParticles = [...Array(20)].map(() => ({
@@ -98,8 +98,8 @@ const Card = () => {
 };
 
 const ZenotroneCard = () => {
- 
- const router = useRouter();
+
+  const router = useRouter();
   const openLink = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
@@ -172,8 +172,8 @@ const ZenotroneCard = () => {
           {/* Event Photo Placeholder */}
           <div className="w-full border-rounded-xl mb-[40px] border-silver-500 mt-5 md:w-3/4 lg:h-[350px] sm:h-[250px] flex justify-center mb-4 md:mb-24">
             <Image
-              src={"/profile.jpg"}
-              width={200}
+              src={"/poster.png"}
+              width={1000}
               height={100}
               alt="Event"
               className="rounded-lg shadow-lg object-cover w-full h-full"
@@ -185,8 +185,8 @@ const ZenotroneCard = () => {
 
         <div className="z-50 lg:ml-[900px] md:ml-[600px] sm:ml-[8px] sm:-mt-[20px] md:-mt-[355px] lg:-mt-[355px] flex flex-col justify-center items-center">
           {/* Event Title */}
-          <h1 className="sm:text-sm lg:text-3xl font-bold text-center text-purple-500">
-            ZenoTronE
+          <h1 className="sm:text-sm lg:text-3xl cyber-font  text-center text-purple-500">
+            ZENOTRONE
           </h1>
 
           {/* Event Description */}
@@ -222,7 +222,7 @@ const ZenotroneCard = () => {
       text-purple-200 hover:text-purple-100
       cursor-default"
             >
-              🔥 Upcoming Event on 22nd Feb, 2025
+              Upcoming Event on 22nd Feb, 2025
             </span>
 
             {/* Registration Date Tag */}
@@ -236,32 +236,32 @@ const ZenotroneCard = () => {
       text-purple-200 hover:text-purple-100
       cursor-default"
             >
-              🗓️ Registration: Feb 1st - 15th, 2025
+              Registration: Feb 1st - 15th, 2025
             </span>
           </div>
 
           {/* Register Button */}
           <div className="flex flex-col z-50 items-center justify-center mt-2">
-          <button
-      className="inline-flex h-9 animate-shimmer items-center justify-center rounded-md border border-purple-500/20  
+            <button
+              className="inline-flex h-9 animate-shimmer items-center justify-center rounded-md border border-purple-500/20  
                  bg-[linear-gradient(110deg,#000103,45%,#4c1d95,55%,#000103)] bg-[length:200%_100%] 
                  px-6 font-medium text-purple-300 transition-colors 
                  hover:bg-[linear-gradient(110deg,#000103,45%,#6d28d9,55%,#000103)] 
                  hover:text-purple-200 hover:border-purple-500/40
                  focus:outline-none focus:ring-2 focus:ring-purple-500/50 
                  focus:ring-offset-2 focus:ring-offset-black"
-      onClick={() => router.push("/event/timeline")} // Navigate to event timeline
-    >
-      Register Now
-    </button>
+              onClick={() => router.push("/events/timeline")} // Navigate to event timeline
+            >
+              Register Now
+            </button>
           </div>
         </div>
 
         {/* Bottom decorative shape */}
-        <div className="absolute -bottom-[70px] md:bottom-0 lg:bottom-0 h-[100px] left-0 w-full">
+        <div className="absolute -bottom-[70px] md:bottom-0 lg:bottom-0 sm:h-[100px] h-[100px] lg:h-[90px] left-0 w-full">
           <Image
             src={"/text1.png"}
-            width={1200}
+            width={1000}
             height={80}
             alt="Zenotrone"
             className="w-full object-cover"
@@ -300,8 +300,8 @@ const GenaiCard = () => {
         <div className="absolute top-4 left-4 text-lg font-bold">
           <Image
             src={"/techtalk.png"}
-            width={200}
-            height={40}
+            width={300}
+            height={80}
             alt="Zenotrone"
             className="lg:w-[200px] w-[100px]"
           />
@@ -358,8 +358,8 @@ const GenaiCard = () => {
 
         <div className=" lg:ml-[900px] md:ml-[600px] sm:ml-[8px] sm:-mt-[20px] md:-mt-[355px] lg:-mt-[355px] flex flex-col justify-center items-center">
           {/* Event Title */}
-          <h1 className="sm:text-sm lg:text-3xl font-bold text-center text-purple-500">
-            Gen AI Workshop
+          <h1 className="sm:text-sm lg:text-3xl cyber-fonttext-center text-purple-500">
+            GEN AI WORKSHOP
           </h1>
 
           {/* Event Description */}
@@ -369,7 +369,7 @@ const GenaiCard = () => {
               <p className="text-center text-xs lg:text-md text-purple-200/90">
                 A pioneering workshop by DevSomeware community exploring the
                 frontiers of
-                <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent px-1">
+                <span className="bg-gradient-to-r from-purple-400 to-purple-600  bg-clip-text text-transparent px-1">
                   Generative AI
                 </span>
               </p>
@@ -388,7 +388,7 @@ const GenaiCard = () => {
       text-purple-200 hover:text-purple-100
       cursor-default"
             >
-              ✅ Past Event on 23rd Jan, 2025
+              Past Event on 23rd Jan, 2025
             </span>
 
             {/* Registration Date Tag */}
@@ -402,7 +402,7 @@ const GenaiCard = () => {
       text-purple-200 hover:text-purple-100
       cursor-default"
             >
-              🗓️ Registration Ended
+               Registration Ended
             </span>
           </div>
 
@@ -423,15 +423,15 @@ const GenaiCard = () => {
         </div>
 
         {/* Bottom decorative shape */}
-        <div className="absolute -bottom-[70px] md:bottom-0 lg:bottom-0 h-[100px] left-0 w-full">
-          <Image
-            src={"/text1.png"}
-            width={1200}
-            height={80}
-            alt="Zenotrone"
-            className="w-full object-cover"
-          />
-        </div>
+        <div className="absolute bottom-0 sm:h-[35px] lg:h-[100px] left-0 w-full overflow-hidden">
+    <Image
+        src={"/genai.png"}
+        width={1000}
+        height={1000}
+        alt="Zenotrone"
+        className="w-full object-cover"
+    />
+</div>
       </div>
     </div>
   );
