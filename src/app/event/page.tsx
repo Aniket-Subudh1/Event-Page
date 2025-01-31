@@ -5,6 +5,7 @@ import WormholeCanvas from "@/components/WormHoleCanvas";
 import { useEffect, useState } from "react";
 import { Instagram, Twitter, Linkedin } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const ParticleBackground = () => {
   const [particles, setParticles] = useState<
@@ -15,6 +16,8 @@ const ParticleBackground = () => {
       opacity: number;
     }>
   >([]);
+
+ 
 
   useEffect(() => {
     const newParticles = [...Array(20)].map(() => ({
@@ -95,6 +98,8 @@ const Card = () => {
 };
 
 const ZenotroneCard = () => {
+ 
+ const router = useRouter();
   const openLink = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
@@ -237,15 +242,18 @@ const ZenotroneCard = () => {
 
           {/* Register Button */}
           <div className="flex flex-col z-50 items-center justify-center mt-2">
-            <button
-              className="inline-flex h-9 animate-shimmer items-center justify-center rounded-md border border-purple-500/20  bg-[linear-gradient(110deg,#000103,45%,#4c1d95,55%,#000103)] 
-  bg-[length:200%_100%] px-6 font-medium text-purple-300  transition-colors hover:bg-[linear-gradient(110deg,#000103,45%,#6d28d9,55%,#000103)]
-  hover:text-purple-200 hover:border-purple-500/40
-  focus:outline-none focus:ring-2 focus:ring-purple-500/50 
-  focus:ring-offset-2 focus:ring-offset-black"
-            >
-              Register Now
-            </button>
+          <button
+      className="inline-flex h-9 animate-shimmer items-center justify-center rounded-md border border-purple-500/20  
+                 bg-[linear-gradient(110deg,#000103,45%,#4c1d95,55%,#000103)] bg-[length:200%_100%] 
+                 px-6 font-medium text-purple-300 transition-colors 
+                 hover:bg-[linear-gradient(110deg,#000103,45%,#6d28d9,55%,#000103)] 
+                 hover:text-purple-200 hover:border-purple-500/40
+                 focus:outline-none focus:ring-2 focus:ring-purple-500/50 
+                 focus:ring-offset-2 focus:ring-offset-black"
+      onClick={() => router.push("/event/timeline")} // Navigate to event timeline
+    >
+      Register Now
+    </button>
           </div>
         </div>
 
