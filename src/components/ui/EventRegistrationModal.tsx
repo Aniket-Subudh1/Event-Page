@@ -8,7 +8,7 @@ import {
   ModalFooter,
   ModalTrigger,
   useModal,
-} from "../ui/animated-modal"; 
+} from "../ui/animated-modal";
 import { LucideIcon } from "lucide-react";
 
 type EventRegistrationModalProps = {
@@ -26,24 +26,32 @@ export function EventRegistrationModal({
   icon: IconComponent,
   onConfirm,
 }: EventRegistrationModalProps) {
-  
   return (
     <Modal>
       {/** Modal Trigger (the button that opens the modal) */}
-      <ModalTrigger className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition">
-        <div className="flex items-center gap-2">
-          <IconComponent className="w-4 h-4" />
-          <span>Register</span>
-        </div>
-      </ModalTrigger>
+      <ModalTrigger 
+  className="inline-flex h-10 items-center justify-center gap-2
+    rounded-md border border-purple-500/20 
+    bg-gradient-to-r from-purple-500/10 via-purple-500/20 to-purple-600/10
+    hover:from-purple-500/20 hover:via-purple-500/30 hover:to-purple-600/20
+    px-6 font-medium text-purple-200 
+    shadow-[0_0_15px_rgba(168,85,247,0.1)]
+    backdrop-blur-sm transition-all duration-300
+    hover:border-purple-500/30 hover:text-purple-100"
+>
+  <div className="flex items-center gap-2">
+    <IconComponent className="w-5 h-5 text-purple-400" />
+    <span>Register Now</span>
+  </div>
+</ModalTrigger>
 
       {/** The main body of the modal, shown when open = true */}
       <ModalBody>
-      <ModalContent className="text-gray-800 dark:text-gray-100 text-left">
-  <h2 className="text-xl font-bold mb-2">{title}</h2>
-  <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
-    <strong>Date:</strong> {date}
-  </p>
+        <ModalContent className="text-gray-800 dark:text-gray-100 text-left">
+          <h2 className="text-xl font-bold mb-2">{title}</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+            <strong>Date:</strong> {date}
+          </p>
 
           {!!highlights?.length && (
             <ul className="list-disc list-inside text-sm mb-6">
@@ -87,7 +95,13 @@ function NoButton() {
   );
 }
 
-function YesButton({ onConfirm, title }: { onConfirm?: () => void; title: string }) {
+function YesButton({
+  onConfirm,
+  title,
+}: {
+  onConfirm?: () => void;
+  title: string;
+}) {
   const { setOpen } = useModal();
 
   const handleYes = () => {
